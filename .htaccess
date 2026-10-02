@@ -1,0 +1,9 @@
+Options -Indexes
+DirectoryIndex index.html
+<FilesMatch "(?i)(^\.|\.(md|mjs|cjs|test\.js|map|log|env)$|^(package(-lock)?\.json)$)">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
